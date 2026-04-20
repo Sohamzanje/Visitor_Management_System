@@ -1,0 +1,16 @@
+{
+  "visitors": [
+    {
+      "id": "4f226a66-a2e6-440f-ba15-3cfb100dc051",
+      "name": "Test Visitor",
+      "phone": "1234567890",
+      "email": "test@example.com",
+      "company": "Test Company",
+      "purpose": "Meeting",
+      "visit_date": "2026-04-18",
+      "check_in_time": "10:00",
+      "remarks": "Test visit",
+      "created_at": "2026-04-18T05:43:39.090Z"
+    }
+  ]
+}

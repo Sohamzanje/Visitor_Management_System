@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Visitor Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="admin.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <div class="admin-info">
+                <span id="adminName"></span>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+        </header>
+
+        <div class="admin-stats">
+            <div class="stat-card">
+                <h3>Total Visitors</h3>
+                <span id="totalVisitors">0</span>
+            </div>
+            <div class="stat-card">
+                <h3>Today's Visitors</h3>
+                <span id="todayVisitors">0</span>
+            </div>
+            <div class="stat-card">
+                <h3>This Week</h3>
+                <span id="weekVisitors">0</span>
+            </div>
+        </div>
+
+        <div class="admin-controls">
+            <button id="refreshBtn" class="btn-refresh">Refresh Data</button>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search visitors...">
+                <select id="filterPurpose">
+                    <option value="">All Purposes</option>
+                    <option value="Meeting">Meeting</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Delivery">Delivery</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <h2>All Visitors</h2>
+        <table id="visitorTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Purpose</th>
+                    <th>Visit Date</th>
+                    <th>Check-in Time</th>
+                    <th>Remarks</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr class="no-data">
+                    <td colspan="11">Loading visitors...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

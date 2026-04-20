@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Management System - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="login.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Visitor Management System</h1>
+
+        <div class="login-container">
+            <div class="login-options">
+                <button id="visitorBtn" class="option-btn visitor-btn">
+                    <h3>Visitor</h3>
+                    <p>Fill out visitor form</p>
+                </button>
+
+                <button id="adminBtn" class="option-btn admin-btn">
+                    <h3>Admin</h3>
+                    <p>Login to manage visitors</p>
+                </button>
+            </div>
+
+            <!-- Admin Login Form -->
+            <div id="adminLoginForm" class="form-container" style="display: none;">
+                <h2>Admin Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p id="signupPrompt" style="display: none; text-align: center; margin-top: 15px;">
+                    No admin account found. <a href="#" id="showSignupLink">Create one here</a>
+                </p>
+            </div>
+
+            <!-- Admin Signup Form -->
+            <div id="adminSignupForm" class="form-container" style="display: none;">
+                <h2>Create Admin Account</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupUsername">Username</label>
+                        <input type="text" id="signupUsername" placeholder="Choose username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="Choose password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminName">Full Name</label>
+                        <input type="text" id="adminName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminEmail">Email</label>
+                        <input type="email" id="adminEmail" placeholder="Enter your email" required>
+                    </div>
+                    <button type="submit">Create Account</button>
+                </form>
+                <p style="text-align: center; margin-top: 15px;">
+                    <a href="#" id="backToLoginLink">Back to Login</a>
+                </p>
+            </div>
+
+            <div class="back-button" style="display: none;">
+                <button id="backBtn">← Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

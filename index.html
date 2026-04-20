@@ -9,7 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Visitor Management System</h1>
+        <header class="visitor-header">
+            <h1>Visitor Registration</h1>
+            <a href="login.html" class="back-link">← Back to Login</a>
+        </header>
         
         <form id="visitorForm">
             <div class="form-row">
@@ -33,6 +36,7 @@
                     <input type="text" id="company" placeholder="Enter company name">
                 </div>
             </div>
+            <input type="hidden" id="visitorId">
 
             <div class="form-row">
                 <div class="form-group">
@@ -52,12 +56,19 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="remarks">Remarks</label>
-                <textarea id="remarks" placeholder="Additional comments"></textarea>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="checkInTime">Check-In Time *</label>
+                    <input type="time" id="checkInTime" required readonly>
+                </div>
+                <div class="form-group">
+                    <label for="remarks">Remarks</label>
+                    <textarea id="remarks" placeholder="Additional comments"></textarea>
+                </div>
             </div>
 
-            <button type="submit">Add Visitor</button>
+            <button type="submit" id="submitButton">Add Visitor</button>
+            <button type="button" id="cancelEditButton" style="display:none; margin-left: 8px;">Cancel</button>
         </form>
 
         <h2 style="margin-top: 40px; color: #333;">Visitor Records</h2>
@@ -70,16 +81,20 @@
                     <th>Company</th>
                     <th>Purpose</th>
                     <th>Visit Date</th>
+                    <th>Check-in Time</th>
                     <th>Remarks</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
                 <tr class="no-data">
-                    <td colspan="8">No visitors yet.</td>
+                    <td colspan="9">No visitors yet.</td>
                 </tr>
             </tbody>
         </table>
-    </div>
-</body>
-</html>
+    <script>
+        // Redirect to login if accessed directly
+        if (!sessionStorage.getItem('fromLogin')) {
+            window.location.href = 'login.html';
+        }
+    </script>
